@@ -6,16 +6,17 @@ spring:
     name: Spring Boot
   main:
     banner-mode: off
-  sleuth:
-    propagation:
-      type: w3c
-    trace-id128: true
 
 management:
   endpoint:
     health:
       probes:
         enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c
 
 logging:
   pattern:
