@@ -1,0 +1,32 @@
+server:
+  shutdown: graceful
+
+spring:
+  application:
+    name: Spring Boot
+  main:
+    banner-mode: off
+  sleuth:
+    propagation:
+      type: w3c
+    trace-id128: true
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+  level:
+    org.zalando.logbook: trace
+
+logbook:
+  include: /**
+  exclude:
+    - /actuator/health/**
+  write:
+    chunk-size: 10000
+    max-body-size: 100000
