@@ -22,6 +22,7 @@
 		<spring-cloud-starter-sleuth.version>3.1.5</spring-cloud-starter-sleuth.version>
 		<spring-cloud-starter-openfeign.version>3.1.5</spring-cloud-starter-openfeign.version>
 		<feign-okhttp.verion>11.10</feign-okhttp.verion>
+		<opentelemetry-api.version>1.28.0</opentelemetry-api.version>
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
 	</properties>
 
@@ -75,6 +76,14 @@
 			<version>${feign-okhttp.verion}</version>
 		</dependency>
 		<!-- end openfeign -->
+
+		<!-- start opentelemetry -->
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-api</artifactId>
+			<version>${opentelemetry-api.version}</version>
+		</dependency>
+		<!-- end opentelemetry -->
 
 		<!-- start mapstruct -->
 		<dependency>
